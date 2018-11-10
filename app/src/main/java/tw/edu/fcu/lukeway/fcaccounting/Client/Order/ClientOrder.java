@@ -64,7 +64,7 @@ public class ClientOrder extends AppCompatActivity {
     private void setData() {
         payName.setText(payData.get(count).payName);
         amount.setText(payData.get(count).currentAmount + " / " + payData.get(count).targetAmount + " $NT");
-        date.setText(payData.get(count).timeLimit + " $NT");
+        date.setText(payData.get(count).timeLimit);
         fee.setText(payData.get(count).feeAmount);
     }
 }
