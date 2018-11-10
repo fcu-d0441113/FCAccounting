@@ -1,17 +1,13 @@
-package tw.edu.fcu.lukeway.fcaccounting.Client.Payment;
+package tw.edu.fcu.lukeway.fcaccounting.Client.Payment.LinePay;
 
 import android.app.Dialog;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.webkit.JavascriptInterface;
-import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -19,7 +15,6 @@ import android.webkit.WebViewClient;
 
 import tw.edu.fcu.lukeway.fcaccounting.Client.Home.ClientHomePage;
 import tw.edu.fcu.lukeway.fcaccounting.Data.LinePayData;
-import tw.edu.fcu.lukeway.fcaccounting.HomePage;
 import tw.edu.fcu.lukeway.fcaccounting.R;
 
 public class LinePayPaymentVC extends AppCompatActivity {

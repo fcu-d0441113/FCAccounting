@@ -1,4 +1,4 @@
-package tw.edu.fcu.lukeway.fcaccounting.Client.Payment;
+package tw.edu.fcu.lukeway.fcaccounting.Client.Payment.LinePay;
 
 import android.content.DialogInterface;
 import android.content.Intent;

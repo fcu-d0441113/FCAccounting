@@ -26,8 +26,8 @@
         <activity android:name=".Client.OrderList.ClientOrderListVC" />
         <activity android:name=".Client.OrderList.ClientOrderListVM" />
         <activity android:name=".Client.Order.ClientOrder" />
-        <activity android:name=".Client.Payment.LinePayPaymentVM" />
-        <activity android:name=".Client.Payment.LinePayPaymentVC" />
+        <activity android:name=".Client.Payment.LinePay.LinePayPaymentVM" />
+        <activity android:name=".Client.Payment.LinePay.LinePayPaymentVC" />
         <activity android:name=".Client.OrderRecord.ClientOrderRecordVM" />
         <activity android:name=".Client.OrderRecord.ClientOrderRecordVC" />
         <activity android:name=".Login.OAuthLoginViewController" />
@@ -46,7 +46,7 @@
         <activity android:name=".OrderListViewModel" />
         <activity android:name=".OrderListViewController" />
         <activity android:name=".Manager.OrderListContent.ManagerOrderListContentVM" />
-        <activity android:name=".Manager.OrderListContent.ManagerOrderListContentVC"></activity>
+        <activity android:name=".Manager.OrderListContent.ManagerOrderListContentVC" />
     </application>
 
 </manifest>

@@ -11,7 +11,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import tw.edu.fcu.lukeway.fcaccounting.Client.OrderList.ClientOrderListVM;
-import tw.edu.fcu.lukeway.fcaccounting.Client.Payment.LinePayPaymentVM;
+import tw.edu.fcu.lukeway.fcaccounting.Client.Payment.LinePay.LinePayPaymentVM;
 import tw.edu.fcu.lukeway.fcaccounting.Data.PayData;
 import tw.edu.fcu.lukeway.fcaccounting.R;
 
