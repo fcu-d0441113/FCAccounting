@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/managerHome"
+        android:title="首頁" />
+    <item
+        android:id="@+id/managerList"
+        android:title="代收款項" />
+    <item
+        android:id="@+id/managerAddOrder"
+        android:title="新增款項" />
+    <item
+        android:id="@+id/managerFinishList"
+        android:title="完成款項" />
+    <item
+        android:id="@+id/managerLogout"
+        android:title="登出" />
+</menu>

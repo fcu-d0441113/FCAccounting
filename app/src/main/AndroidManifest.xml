@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="tw.edu.fcu.lukeway.fcaccounting">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".HomePage"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Manager.AddOrder.OrderChoose" />
+        <activity android:name=".Manager.AddOrder.Fundraising" />
+        <activity android:name=".Client.OrderList.ClientOrderListVC" />
+        <activity android:name=".Client.OrderList.ClientOrderListVM" />
+        <activity android:name=".Client.Order.ClientOrder" />
+        <activity android:name=".Client.Payment.LinePayPaymentVM" />
+        <activity android:name=".Client.Payment.LinePayPaymentVC" />
+        <activity android:name=".Client.OrderRecord.ClientOrderRecordVM" />
+        <activity android:name=".Client.OrderRecord.ClientOrderRecordVC" />
+        <activity android:name=".Login.OAuthLoginViewController" />
+        <activity
+            android:name=".Manager.Home.ManagerHomePage"
+            android:label="@string/title_activity_manager_home_page"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Manager.OrderList.ManagerOrderListVC" />
+        <activity android:name=".Manager.OrderList.ManagerOrderListVM" />
+        <activity android:name=".Manager.FinishOrderList.ManagerFinishOrderListVM" />
+        <activity android:name=".Manager.FinishOrderList.ManagerFinishOrderListVC" />
+        <activity
+            android:name=".Client.Home.ClientHomePage"
+            android:label="@string/title_activity_client_home_page"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".OrderListViewModel" />
+        <activity android:name=".OrderListViewController"></activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/clientHome"
+        android:title="首頁" />
+    <item
+        android:id="@+id/clientList"
+        android:title="代收款項" />
+    <item
+        android:id="@+id/clientOrderRecord"
+        android:title="帳戶紀錄" />
+    <item
+        android:id="@+id/clientLogout"
+        android:title="登出" />
+</menu>
