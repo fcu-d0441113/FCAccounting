@@ -44,7 +44,9 @@
             android:label="@string/title_activity_client_home_page"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".OrderListViewModel" />
-        <activity android:name=".OrderListViewController"></activity>
+        <activity android:name=".OrderListViewController" />
+        <activity android:name=".Manager.OrderListContent.ManagerOrderListContentVM" />
+        <activity android:name=".Manager.OrderListContent.ManagerOrderListContentVC"></activity>
     </application>
 
 </manifest>

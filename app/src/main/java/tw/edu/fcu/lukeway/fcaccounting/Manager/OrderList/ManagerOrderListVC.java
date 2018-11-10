@@ -1,5 +1,6 @@
 package tw.edu.fcu.lukeway.fcaccounting.Manager.OrderList;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import tw.edu.fcu.lukeway.fcaccounting.Data.PayData;
+import tw.edu.fcu.lukeway.fcaccounting.Manager.OrderListContent.ManagerOrderListContentVM;
 import tw.edu.fcu.lukeway.fcaccounting.R;
 
 public class ManagerOrderListVC extends AppCompatActivity {
@@ -34,7 +36,13 @@ public class ManagerOrderListVC extends AppCompatActivity {
         payList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
+                Intent intent = new Intent();
+                intent.putExtra("payName", payData.get(i).payName);
+                intent.putExtra("dateLimit", payData.get(i).timeLimit);
+                intent.putExtra("amount", payData.get(i).currentAmount + " / " + payData.get(i).targetAmount + " $NT");
+                intent.putExtra("payId", payData.get(i).payId);
+                intent.setClass(ManagerOrderListVC.this, ManagerOrderListContentVM.class);
+                startActivity(intent);
             }
         });
     }
