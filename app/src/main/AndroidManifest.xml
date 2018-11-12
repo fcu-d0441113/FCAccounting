@@ -47,6 +47,8 @@
         <activity android:name=".OrderListViewController" />
         <activity android:name=".Manager.OrderListContent.ManagerOrderListContentVM" />
         <activity android:name=".Manager.OrderListContent.ManagerOrderListContentVC" />
+        <activity android:name=".Client.Payment.iSunny.SunnyBankPaymentVM" />
+        <activity android:name=".Client.Payment.iSunny.SunnyBankPaymentVC"></activity>
     </application>
 
 </manifest>

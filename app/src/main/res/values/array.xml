@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="paymentType_array">
+        <item>陽信 iSunny</item>
+        <item>PayPal</item>
+        <item>Line Pay</item>
+    </array>
+</resources>

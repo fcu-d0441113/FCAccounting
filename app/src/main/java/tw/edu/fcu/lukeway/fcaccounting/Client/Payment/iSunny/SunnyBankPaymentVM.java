@@ -1,4 +1,4 @@
-package tw.edu.fcu.lukeway.fcaccounting.Client.Payment.LinePay;
+package tw.edu.fcu.lukeway.fcaccounting.Client.Payment.iSunny;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -20,24 +20,24 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 import tw.edu.fcu.lukeway.fcaccounting.Client.OrderList.ClientOrderListVM;
-import tw.edu.fcu.lukeway.fcaccounting.Data.LinePayData;
+import tw.edu.fcu.lukeway.fcaccounting.Data.ISunnyData;
 import tw.edu.fcu.lukeway.fcaccounting.Data.PayData;
 import tw.edu.fcu.lukeway.fcaccounting.R;
 
-public class LinePayPaymentVM extends AppCompatActivity {
+public class SunnyBankPaymentVM extends AppCompatActivity {
 
     private RequestQueue mQueue;
     private String paymentType;
     private int count;
     private String amount;
-    private static LinePayData linePayData;
+    public static ISunnyData iSunnyData;
     private ArrayList<PayData> payData = ClientOrderListVM.payData;
     private SharedPreferences userProfileManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_line_pay_payment_vm);
+        setContentView(R.layout.activity_sunny_bank_payment_vm);
         userProfileManager = getSharedPreferences("userProfile",0);
         mQueue = Volley.newRequestQueue(this);
         Intent intent = getIntent();
@@ -67,29 +67,19 @@ public class LinePayPaymentVM extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
-                            Log.v("result", response.getString("returnCode"));
-                            //Log.v("info", response.getString("info"));
-                            String info = response.getString("info");
-                            String paymentUrl = new JSONObject(info).getString("paymentUrl");
-                            linePayData = new LinePayData(response.getString("amount").toString(),
-                                    response.getString("productName").toString(),
-                                    response.getString("orderId").toString(), "TWD");
-                            linePayData.setPaymentUrlWeb(new JSONObject(paymentUrl).getString("web"));
-                            linePayData.setPaymentUrlLine(new JSONObject(paymentUrl).getString("app"));
-                            linePayData.setTransactionId(new JSONObject(info).getString("transactionId"));
-                            //處理transactionReserveId
-                            String weburl = linePayData.getPaymentUrlWeb();
-                            int index = weburl.indexOf("transactionReserveId");
-                            index = index + 21;
-                            String transactionReserveId = weburl.substring(index, index + 86);
-                            Log.v("transactionReserveId", transactionReserveId);
-                            linePayData.setTransactionReserveId(transactionReserveId);
-                            //處理loginUrl
-                            String loginUrl = "https://access.line.me/dialog/oauth/weblogin?channelId=1410784205&redirectUrl=https%3A%2F%2Fsandbox-web-pay.line.me%2Fweb%2Fpayment%2FwaitPostLogin%3FtransactionReserveId%3D"
-                                    + linePayData.getTransactionReserveId() + "&state=fkupdq71kjtqdqc3btlj8g6lgv";
-                            linePayData.setLoginUrl(loginUrl);
+                            iSunnyData = new ISunnyData(
+                                    response.getString("orderId"),
+                                    response.getString("memberId"),
+                                    response.getString("procCode"),
+                                    response.getString("amount"),
+                                    response.getString("initDateTime"),
+                                    response.getString("MAC"),
+                                    response.getString("replyURL"),
+                                    response.getString("memo"),
+                                    response.getString("noticeURL")
+                            );
                             finish();   //結束，關閉頁面
-                            startActivity(new Intent(LinePayPaymentVM.this, LinePayPaymentVC.class));
+                            startActivity(new Intent(SunnyBankPaymentVM.this, SunnyBankPaymentVC.class));
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
@@ -119,9 +109,5 @@ public class LinePayPaymentVM extends AppCompatActivity {
 
                 }).create();
         dialog.show();
-    }
-
-    public static LinePayData getLinePayData() {
-        return linePayData;
     }
 }
