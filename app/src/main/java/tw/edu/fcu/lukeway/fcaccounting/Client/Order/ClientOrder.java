@@ -15,6 +15,7 @@ import java.util.ArrayList;
 
 import tw.edu.fcu.lukeway.fcaccounting.Client.OrderList.ClientOrderListVM;
 import tw.edu.fcu.lukeway.fcaccounting.Client.Payment.LinePay.LinePayPaymentVM;
+import tw.edu.fcu.lukeway.fcaccounting.Client.Payment.Paypal.PayPalVM;
 import tw.edu.fcu.lukeway.fcaccounting.Client.Payment.iSunny.SunnyBankPaymentVM;
 import tw.edu.fcu.lukeway.fcaccounting.Data.PayData;
 import tw.edu.fcu.lukeway.fcaccounting.R;
@@ -53,6 +54,10 @@ public class ClientOrder extends AppCompatActivity {
                 Log.v("paymentType", Type);
                 if (Type.equals("1")) {
                     intent2.setClass(ClientOrder.this, SunnyBankPaymentVM.class);
+                    startActivity(intent2);
+                }
+                else if (Type.equals("2")) {
+                    intent2.setClass(ClientOrder.this, PayPalVM.class);
                     startActivity(intent2);
                 }
                 else if (Type.equals("3")) {

@@ -48,7 +48,9 @@
         <activity android:name=".Manager.OrderListContent.ManagerOrderListContentVM" />
         <activity android:name=".Manager.OrderListContent.ManagerOrderListContentVC" />
         <activity android:name=".Client.Payment.iSunny.SunnyBankPaymentVM" />
-        <activity android:name=".Client.Payment.iSunny.SunnyBankPaymentVC"></activity>
+        <activity android:name=".Client.Payment.iSunny.SunnyBankPaymentVC" />
+        <activity android:name=".Client.Payment.Paypal.PayPalVM" />
+        <activity android:name=".Client.Payment.Paypal.PayPalVC"></activity>
     </application>
 
 </manifest>
